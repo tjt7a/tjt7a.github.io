@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.astro/
+.DS_Store
+
+# Local copy of the CV; the published one is public/cv.pdf
+/CV_*.pdf

@@ -1,0 +1,28 @@
+---
+import { formatDate, type Note } from '../lib/wiki';
+
+interface Props {
+  notes: Note[];
+}
+
+const { notes } = Astro.props;
+---
+
+<ul class="plain-list notes">
+  {notes.map((note) => (
+    <li>
+      <a class="note-title" href={`/wiki/${note.id}/`}>{note.data.title}</a>
+      {note.data.draft && <span class="pill">draft</span>}
+      <div class="note-meta">
+        <span class={`status status-${note.data.status}`}>{note.data.status}</span>
+        <span class="muted"> · {formatDate(note.data.updated ?? note.data.created)}</span>
+      </div>
+      {note.data.description && <div class="muted small">{note.data.description}</div>}
+    </li>
+  ))}
+</ul>
+
+<style>
+  .note-title { font-weight: 600; }
+  .note-meta { font-family: var(--sans); font-size: 0.8rem; }
+</style>

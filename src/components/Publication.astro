@@ -1,0 +1,36 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { site } from '../site.config';
+
+interface Props {
+  pub: CollectionEntry<'publications'>;
+}
+
+const { title, authors, venue, year, note, links } = Astro.props.pub.data;
+---
+
+<li class="pub">
+  <div class="pub-title">{title}</div>
+  <div class="pub-authors">
+    {authors.map((a, i) => (
+      <>
+        {a === site.authorName ? <strong>{a}</strong> : a}
+        {i < authors.length - 1 && ', '}
+      </>
+    ))}
+  </div>
+  <div class="pub-venue"><em>{venue}</em>, {year}{note && <span class="pub-note"> · {note}</span>}</div>
+  {links.length > 0 && (
+    <div class="link-row">
+      {links.map((l) => <a href={l.href}>{l.label}</a>)}
+    </div>
+  )}
+</li>
+
+<style>
+  .pub { margin-bottom: 1.25rem; }
+  .pub-title { font-weight: 600; line-height: 1.4; }
+  .pub-authors, .pub-venue { font-size: 0.98rem; }
+  .pub-venue { color: var(--muted); }
+  .pub-note { color: var(--accent); font-family: var(--sans); font-size: 0.85rem; }
+</style>

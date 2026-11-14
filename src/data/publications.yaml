@@ -1,0 +1,208 @@
+# One entry per publication. `id` must be unique (e.g. firstauthor-year-keyword).
+# type: journal | conference | workshop | preprint | thesis | other
+# selected: true shows it on the home page.
+# Write your name exactly as `authorName` in src/site.config.ts so it gets bolded.
+
+- id: tracy-2026-periscope
+  title: "Periscope: Extending the Scope of Pre-silicon Assertion-Based Verification with Runtime Monitor Feedback"
+  authors: ["T. Tracy II", "Y. Seneviratne", "K. Nandagopal", "D. Chinnasame Rani", "M. Dwyer", "B. Bingham", "K. Skadron"]
+  venue: "International Conference on Runtime Verification (RV), LNCS"
+  year: 2026
+  type: conference
+  selected: true
+  links:
+    - { label: DOI, href: "https://doi.org/10.1007/978-3-032-41160-0_21" }
+
+- id: yaish-2026-autoffinder
+  title: "AutoFFinder: A Reconfigurable Hardware-Accelerated Platform for Multi-Guide CRISPR/Cas9 Off-Target Search"
+  authors: ["O. Yaish", "T. Tracy II", "K. Skadron", "Y. Orenstein"]
+  venue: "Bioinformatics"
+  year: 2026
+  type: journal
+  selected: true
+  note: "Also presented at RECOMBArch 2026"
+  links:
+    - { label: DOI, href: "https://doi.org/10.1093/bioinformatics/btag818" }
+
+- id: obla-2026-rapidscan
+  title: "Reconfigurable Computing Challenge: RapidScan High-Throughput Parameterized HLS-based Streaming String Matching Library for FPGAs"
+  authors: ["S. Obla", "T. Tracy II", "M. Beck", "J. C. Hoe", "K. Skadron", "W. U. Hassan"]
+  venue: "IEEE 34th International Symposium on Field-Programmable Custom Computing Machines (FCCM)"
+  year: 2026
+  type: conference
+  note: "3rd Place, Reconfigurable Computing Challenge"
+
+- id: efimov-2026-pcre
+  title: "Normal Forms for Perl-Compatible Regular Expressions"
+  authors: ["O. Efimov", "N. Y. Canton", "T. Tracy II", "W. Zheng", "K. Skadron", "K. Angstadt"]
+  venue: "30th International Conference on Implementation and Application of Automata (CIAA), Tool Track"
+  year: 2026
+  type: conference
+
+- id: horne-2024-fish
+  title: "Automated Acoustic Monitoring of Fish for Near-Real-Time Resource Management"
+  authors: ["J. K. Horne", "J. A. Swan", "T. Tracy II", "G. W. Holtgrieve"]
+  venue: "ICES Journal of Marine Science 81(7)"
+  year: 2024
+  type: journal
+  links:
+    - { label: DOI, href: "https://doi.org/10.1093/icesjms/fsad196" }
+
+- id: pantoja-2023-rfid
+  title: "Virtualized Controller for Computational RFID-based IoT Sensors"
+  authors: ["E. Pantoja", "R. Sreekumar", "S. Mosanu", "T. Tracy II", "M. Stan"]
+  venue: "IEEE International Conference on RFID (RFID)"
+  year: 2023
+  type: conference
+  links:
+    - { label: DOI, href: "https://doi.org/10.1109/RFID58307.2023.10178612" }
+
+- id: angstadt-2022-legacy
+  title: "Synthesizing Legacy String Code for FPGAs Using Bounded Automata Learning"
+  authors: ["K. Angstadt", "T. Tracy II", "K. Skadron", "J.-B. Jeannin", "W. Weimer"]
+  venue: "IEEE Micro 42(5)"
+  year: 2022
+  type: journal
+  links:
+    - { label: DOI, href: "https://doi.org/10.1109/MM.2022.3178037" }
+
+- id: mosanu-2022-pimulator
+  title: "PiMulator: A Fast and Flexible Processing-in-Memory Emulation Platform"
+  authors: ["S. Mosanu", "M. N. Sakib", "T. Tracy II", "E. Cukurtas", "A. Ahmed", "P. Ivanov", "S. Khan", "K. Skadron", "M. Stan"]
+  venue: "Design, Automation & Test in Europe Conference & Exhibition (DATE)"
+  year: 2022
+  type: conference
+  links:
+    - { label: DOI, href: "https://doi.org/10.23919/DATE54114.2022.9774614" }
+
+- id: verma-2022-extrem-edge
+  title: "EXTREM-EDGE: EXtensions To RISC-V for Energy-efficient ML Inference at the EDGE of IoT"
+  authors: ["V. Verma", "T. Tracy II", "M. R. Stan"]
+  venue: "Sustainable Computing: Informatics and Systems 35"
+  year: 2022
+  type: journal
+  links:
+    - { label: DOI, href: "https://doi.org/10.1016/j.suscom.2022.100742" }
+
+- id: sakib-2022-pim-temporal
+  title: "Processing-in-Memory with Temporal Encoding"
+  authors: ["M. N. Sakib", "R. Sreekumar", "X. Zhu", "T. Tracy II", "M. R. Stan"]
+  venue: "IEEE Computer Society Annual Symposium on VLSI (ISVLSI)"
+  year: 2022
+  type: conference
+  links:
+    - { label: DOI, href: "https://doi.org/10.1109/ISVLSI54635.2022.00023" }
+
+- id: siddique-2022-dfa-nfa
+  title: "Deterministic vs. Non-Deterministic Finite Automata in Automata Processing"
+  authors: ["F. A. Siddique", "T. Tracy II", "N. Brunelle", "K. Skadron"]
+  venue: "arXiv preprint arXiv:2210.10077"
+  year: 2022
+  type: preprint
+  links:
+    - { label: arXiv, href: "https://arxiv.org/abs/2210.10077" }
+
+- id: sakib-2021-atcpim
+  title: "ATCPIM: Analog to Time Coded Processing in Memory for IoT at the Edge"
+  authors: ["M. N. Sakib", "R. Sreekumar", "V. Verma", "T. Tracy II", "M. R. Stan"]
+  venue: "IEEE 7th World Forum on Internet of Things (WF-IoT)"
+  year: 2021
+  type: conference
+  links:
+    - { label: DOI, href: "https://doi.org/10.1109/WF-IoT51360.2021.9595467" }
+
+- id: kim-2021-in-network
+  title: "A Roadmap for Enabling a Future-Proof In-Network Computing Data Plane Ecosystem"
+  authors: ["D. Kim", "N. Lazarev", "T. Tracy II", "F. Siddique", "H. Namkung", "J. C. Hoe", "V. Sekar", "et al."]
+  venue: "arXiv preprint arXiv:2111.04563"
+  year: 2021
+  type: preprint
+  links:
+    - { label: arXiv, href: "https://arxiv.org/abs/2111.04563" }
+
+- id: tracy-2020-fmcad
+  title: "Runtime Verification on FPGAs with LTLf Specifications"
+  authors: ["T. Tracy II", "L. M. Tabajara", "M. Y. Vardi", "K. Skadron"]
+  venue: "Formal Methods in Computer-Aided Design (FMCAD)"
+  year: 2020
+  type: conference
+
+- id: gonzalez-2020-sigma-delta
+  title: "Towards On-Node Machine Learning for Ultra-Low-Power Sensors Using Asynchronous Σ∆ Streams"
+  authors: ["P. Gonzalez-Guerrero", "T. Tracy II", "X. Guo", "R. Sreekumar", "M. Lenjani", "K. Skadron", "M. R. Stan"]
+  venue: "ACM Journal on Emerging Technologies in Computing Systems (JETC) 16(4)"
+  year: 2020
+  type: journal
+  links:
+    - { label: DOI, href: "https://doi.org/10.1145/3404975" }
+
+- id: casias-2019-debugging
+  title: "Debugging Support for Pattern-Matching Languages and Accelerators"
+  authors: ["M. Casias", "K. Angstadt", "T. Tracy II", "K. Skadron", "W. Weimer"]
+  venue: "International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS)"
+  year: 2019
+  type: conference
+  selected: true
+  links:
+    - { label: DOI, href: "https://doi.org/10.1145/3297858.3304066" }
+
+- id: gonzalez-2019-random-forest
+  title: "Towards Low-Power Random Forest Using Asynchronous Computing with Streams"
+  authors: ["P. Gonzalez-Guerrero", "T. Tracy II", "X. Guo", "M. R. Stan"]
+  venue: "Tenth International Green and Sustainable Computing Conference (IGSC)"
+  year: 2019
+  type: conference
+  links:
+    - { label: DOI, href: "https://doi.org/10.1109/IGSC48788.2019.8957193" }
+
+- id: tracy-2019-tiled
+  title: "Accelerating Design Convergence of Automata Processing Designs with a Tiled Hierarchy"
+  authors: ["T. Tracy II", "J. Wadden", "T. Xie", "K. Skadron", "M. Stan"]
+  venue: "Sixth International Workshop on FPGAs for Software Programmers (FSP)"
+  year: 2019
+  type: workshop
+
+- id: wadden-2018-automatazoo
+  title: "AutomataZoo: A Modern Automata Processing Benchmark Suite"
+  authors: ["J. Wadden", "T. Tracy II", "E. Sadredini", "L. Wu", "C. Bo", "J. Du", "Y. Wei", "J. Udall", "M. Wallace", "M. Stan", "K. Skadron"]
+  venue: "IEEE International Symposium on Workload Characterization (IISWC)"
+  year: 2018
+  type: conference
+  selected: true
+  links:
+    - { label: DOI, href: "https://doi.org/10.1109/IISWC.2018.8573482" }
+
+- id: wadden-2016-anmlzoo
+  title: "ANMLzoo: A Benchmark Suite for Exploring Bottlenecks in Automata Processing Engines and Architectures"
+  authors: ["J. Wadden", "V. Dang", "N. Brunelle", "T. Tracy II", "D. Guo", "E. Sadredini", "K. Wang", "C. Bo", "G. Robins", "M. Stan", "K. Skadron"]
+  venue: "IEEE International Symposium on Workload Characterization (IISWC)"
+  year: 2016
+  type: conference
+  selected: true
+  links:
+    - { label: DOI, href: "https://doi.org/10.1109/IISWC.2016.7581271" }
+
+- id: tracy-2016-ml-ap
+  title: "Towards Machine Learning on the Automata Processor"
+  authors: ["T. Tracy II", "Y. Fu", "I. Roy", "E. Jonas", "P. Glendenning"]
+  venue: "International Conference on High Performance Computing (ISC High Performance), LNCS"
+  year: 2016
+  type: conference
+  links:
+    - { label: DOI, href: "https://doi.org/10.1007/978-3-319-41321-1_11" }
+
+- id: wang-2016-ap-overview
+  title: "An Overview of Micron's Automata Processor"
+  authors: ["K. Wang", "K. Angstadt", "C. Bo", "N. Brunelle", "E. Sadredini", "T. Tracy II", "J. Wadden", "M. Stan", "K. Skadron"]
+  venue: "International Conference on Hardware/Software Codesign and System Synthesis (CODES+ISSS)"
+  year: 2016
+  type: conference
+  links:
+    - { label: DOI, href: "https://doi.org/10.1145/2968456.2976763" }
+
+- id: tracy-2015-levenshtein
+  title: "Nondeterministic Finite Automata in Hardware: The Case of the Levenshtein Automaton"
+  authors: ["T. Tracy II", "M. Stan", "N. Brunelle", "J. Wadden", "K. Wang", "K. Skadron", "et al."]
+  venue: "Architectures and Systems for Big Data (ASBD), in conjunction with ISCA"
+  year: 2015
+  type: workshop

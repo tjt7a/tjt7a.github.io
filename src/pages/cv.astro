@@ -1,0 +1,92 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import { byRecency } from '../lib/publications';
+import Publication from '../components/Publication.astro';
+import { existsSync } from 'node:fs';
+import { site } from '../site.config';
+
+// Only show the download button once the PDF has been added to public/.
+const pdf = site.cv.pdf && existsSync(`public${site.cv.pdf}`) ? site.cv.pdf : null;
+const sections = (await getCollection('cv')).map((s) => s.data).sort((a, b) => a.order - b.order);
+const pubs = (await getCollection('publications')).sort(byRecency);
+const pubGroups = [
+  { label: 'Journal articles', types: ['journal'] },
+  { label: 'Conference papers', types: ['conference'] },
+  { label: 'Workshops, preprints & other', types: ['workshop', 'preprint', 'thesis', 'other'] },
+]
+  .map((g) => ({ ...g, items: pubs.filter((p) => g.types.includes(p.data.type)) }))
+  .filter((g) => g.items.length);
+---
+
+<Base title="CV" description={`Curriculum vitae of ${site.name}`}>
+  <header class="page-header cv-header">
+    <div>
+      <h1>{site.name}</h1>
+      <p>{site.title} · {site.affiliation}</p>
+      <p class="sans small">{site.email} · {site.location}</p>
+    </div>
+    {pdf && <a class="download no-print" href={pdf}>Download PDF</a>}
+  </header>
+
+  {sections.map((section) => (
+    <>
+      <h2 class="section-title">{section.title}</h2>
+      <dl class="cv-list">
+        {section.entries.map((e) => (
+          <>
+            <dt>{e.when}</dt>
+            <dd>
+              <strong>{e.what}</strong>{e.where && <>, {e.where}</>}
+              {e.details && <div class="muted small">{e.details}</div>}
+            </dd>
+          </>
+        ))}
+      </dl>
+    </>
+  ))}
+
+  <h2 class="section-title">Publications</h2>
+  {pubGroups.map((g) => (
+    <>
+      <h3>{g.label}</h3>
+      <ol class="cv-pubs">{g.items.map((pub) => <Publication pub={pub} />)}</ol>
+    </>
+  ))}
+
+  <p class="muted small sans">Last updated {site.cv.updated}.</p>
+</Base>
+
+<style>
+  .cv-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .download {
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    padding: 0.45rem 0.9rem;
+    border: 1px solid var(--accent);
+    border-radius: 6px;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .download:hover { background: var(--accent-soft); }
+  .cv-list {
+    display: grid;
+    grid-template-columns: 7.5rem 1fr;
+    gap: 0.6rem 1.25rem;
+    margin: 0;
+  }
+  .cv-list dt { font-family: var(--sans); font-size: 0.88rem; color: var(--muted); padding-top: 0.15rem; }
+  .cv-list dd { margin: 0; }
+  .cv-pubs { padding-left: 1.5rem; }
+  h3 { font-size: 1rem; margin-top: 1.5rem; }
+  @media (max-width: 34rem) {
+    .cv-list { grid-template-columns: 1fr; gap: 0; }
+    .cv-list dd { margin-bottom: 0.9rem; }
+  }
+</style>

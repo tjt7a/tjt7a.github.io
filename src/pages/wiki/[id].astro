@@ -1,0 +1,67 @@
+---
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { getNotes, backlinks, formatDate, type Note } from '../../lib/wiki';
+
+export async function getStaticPaths() {
+  const notes = await getNotes();
+  return notes.map((note) => ({ params: { id: note.id }, props: { note, notes } }));
+}
+
+const { note, notes } = Astro.props as { note: Note; notes: Note[] };
+const { Content } = await render(note);
+const linkedFrom = backlinks(note.id, notes);
+const { title, description, created, updated, tags, status, draft } = note.data;
+---
+
+<Base title={title} description={description}>
+  <header class="page-header">
+    <p class="sans small"><a href="/wiki/">← Wiki</a></p>
+    <h1>{title}</h1>
+    <p class="meta">
+      <span class={`status status-${status}`}>{status}</span>
+      · planted {formatDate(created)}
+      {updated && <> · tended {formatDate(updated)}</>}
+      {draft && <> · <span class="pill">draft, not published</span></>}
+    </p>
+    {tags.length > 0 && (
+      <ul class="pill-row">{tags.map((t) => <li><a class="pill" href={`/wiki/tags/${t}/`}>{t}</a></li>)}</ul>
+    )}
+  </header>
+
+  <article class="prose"><Content /></article>
+
+  {linkedFrom.length > 0 && (
+    <aside class="backlinks">
+      <h2 class="section-title">Linked from</h2>
+      <ul class="plain-list">
+        {linkedFrom.map((n) => (
+          <li>
+            <a href={`/wiki/${n.id}/`}>{n.data.title}</a>
+            {n.data.description && <div class="muted small">{n.data.description}</div>}
+          </li>
+        ))}
+      </ul>
+    </aside>
+  )}
+</Base>
+
+<script>
+  // Mark links to notes that don't exist yet, so they read as "to be written".
+  const known = new Set(JSON.parse(document.getElementById('note-ids')!.textContent!));
+  for (const a of document.querySelectorAll<HTMLAnchorElement>('a.wikilink')) {
+    const id = a.pathname.replace(/^\/wiki\/|\/$/g, '');
+    if (!known.has(id)) {
+      a.classList.add('missing');
+      a.title = 'Not written yet';
+    }
+  }
+</script>
+<script type="application/json" id="note-ids" set:html={JSON.stringify(notes.map((n) => n.id))} />
+
+<style>
+  .meta { font-family: var(--sans); font-size: 0.85rem; margin-bottom: 0.6rem !important; }
+  .backlinks { margin-top: 3rem; }
+  .backlinks li { margin-bottom: 0.6rem; }
+  :global(a.wikilink.missing) { color: var(--muted); text-decoration-style: dashed; cursor: help; }
+</style>

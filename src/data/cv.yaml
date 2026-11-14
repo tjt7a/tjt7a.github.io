@@ -1,0 +1,173 @@
+# CV sections, shown in this order on /cv/. Publications are appended automatically
+# from publications.yaml. Add, remove, or rename sections freely; each needs a unique id.
+
+- id: appointments
+  title: Academic Appointments
+  entries:
+    - when: 2021 – present
+      what: Research Scientist
+      where: Department of Computer Science, University of Virginia
+      details: "Research in LLM-driven hardware synthesis, hardware specification mining, pre-silicon and runtime hardware verification, FPGA-accelerated bioinformatics, accelerated network security, and high-speed regular expression processing. Mentor three undergraduate and three graduate students. Administer the lab's FPGA- and GPU-equipped research machines. Wrote quarterly research reports for the CRISP multi-university research center (2019–2023)."
+    - when: 2019 – 2021
+      what: Postdoctoral Researcher
+      where: Department of Computer Science, University of Virginia
+      details: Built end-to-end cloud research tools for hardware-accelerated pattern recognition.
+
+- id: education
+  title: Education
+  entries:
+    - when: 2019
+      what: Ph.D., Computer Engineering
+      where: University of Virginia
+      details: "Dissertation: Accelerating Decision Tree Ensemble Inference with an Automata Representation. Advisor: Prof. Mircea Stan. Committee: Prof. Kevin Skadron, Prof. Gabriel Robins, Dr. Indranil Roy, Prof. Gustavo Rohde."
+    - when: 2014
+      what: M.E., Computer Engineering
+      where: University of Virginia
+      details: "Research topics: software defined radio, bioinformatics."
+    - when: 2010
+      what: B.S., Computer Engineering
+      where: University of Virginia
+      details: "Thesis: Socio-Technical Factors Leading to the Adoption of Free Software."
+
+- id: experience
+  title: Industry & Research Experience
+  entries:
+    - when: 2018 – 2019
+      what: Software Defined Radio Engineer
+      where: Thracian Group Corporation, Charlottesville, VA
+      details: Designed and built a multipurpose SDR appliance for electronic warfare training.
+    - when: 2017
+      what: Researcher
+      where: Corporation for National Research Initiatives (CNRI), Charlottesville, VA
+      details: Developed techniques for bootstrapping ALS-WR recommendation systems for environmental datasets.
+    - when: 2015, 2016
+      what: Research Intern
+      where: Micron, Milpitas, CA
+      details: Developed machine learning model transformations (automata-based decision tree ensembles) and ML application benchmarks for Micron's Automata Processor.
+    - when: 2013
+      what: Research Intern
+      where: Alliant Techsystems Inc. (ATK), Monterey, CA
+      details: Built a GNU Radio mechanism to split shared-memory SDR applications across multiple machines for throughput scalability.
+    - when: 2010 – 2012
+      what: Validation Engineer
+      where: General Electric, Salem, VA
+      details: Wrote and ran validation test plans for power plant control software, with emphasis on HMI and cyber security testing; administered two large mixed-technology test systems.
+
+- id: awards
+  title: Honors & Awards
+  entries:
+    - when: 2026
+      what: 3rd Place, FCCM Reconfigurable Computing Challenge
+      details: RapidScan
+    - when: 2026
+      what: 2nd Place, Dominion Cup Homebrew Competition
+      details: Two mead categories
+    - when: 2016
+      what: First Place Graduate Team, UVA DataFest
+      details: UVA's inaugural DataFest competition
+    - when: —
+      what: Eagle Scout Award
+      where: Leavenworth, KS
+
+- id: patents
+  title: Patents
+  entries:
+    - when: 2020
+      what: Space Efficient Random Decision Forest Models Implementation Utilizing Automata Processors
+      where: US Patent 10,699,213 B2
+      details: "Y. Fu, P. Glendenning, T. Tracy II, E. Jonas. Related applications: US App. 16/913,582 (2020), 18/439,024 (2024)."
+
+- id: presentations
+  title: Presentations & Posters
+  entries:
+    - when: 2026
+      what: "RapidDetect: Lightning-Fast Threat Detection via Hardware-Accelerated Streaming Log Analysis"
+      where: GOMACTech
+      details: Presentation and paper
+    - when: 2026
+      what: "AutoFFinder: A Reconfigurable Hardware-Accelerated Platform for Multi-Guide CRISPR/Cas9 Off-Target Search"
+      where: RECOMBArch
+    - when: 2024
+      what: "Trace-Based Runtime Specification Mining for Pre- and Post-Silicon Verification"
+      where: GOMACTech
+      details: Poster and paper
+    - when: 2024
+      what: "Towards Lightning-Fast Threat Detection with Near Data Processing"
+      where: GOMACTech
+      details: Poster and paper
+    - when: 2021
+      what: "Accelerating Snort Regular Expressions on FPGAs with Decomposed Automata"
+      where: GOMACTech
+      details: Poster and paper
+    - when: 2019
+      what: "An Improved Spatial Encoding for Large Decision Tree Ensemble Automata"
+      where: GOMACTech
+      details: Poster
+    - when: 2018
+      what: "Streaming Random Forest Inference"
+      where: GOMACTech
+      details: Paper and presentation
+    - when: 2018
+      what: Levenshtein-based read alignment algorithm
+      where: AACBB Workshop
+      details: Workshop paper and presentation
+    - when: 2016
+      what: Random forest character recognition and Brill rules on the Automata Processor
+      where: C-FAR
+      details: Presentation and end-to-end demo
+    - when: 2014
+      what: "GR-Router: Distributing SDR Application Workloads"
+      where: GNU Radio Conference (GRCon14)
+
+- id: teaching
+  title: Teaching & Mentoring
+  entries:
+    - when: 2024, 2026
+      what: Guest Lecturer, Computer Architecture
+      where: University of Virginia
+      details: Lecture on modern FPGAs.
+    - when: Spring 2019
+      what: Lecturer, Software Defined Radio + Machine Learning (graduate independent study)
+      where: University of Virginia
+      details: Emphasis on incorporating SDR technologies into millimeter-wave research.
+    - when: Fall 2018
+      what: Co-Lecturer, Fundamentals of Electronics (FUN III), Analog Electronics
+      where: University of Virginia
+    - when: Fall 2014
+      what: Graduate Teaching Assistant, FPGA-based 4th-year Capstone
+      where: University of Virginia
+    - when: —
+      what: Tutor, Center for Diversity in Engineering
+      details: Electronics, digital logic design, theory of computation, computer architecture.
+
+- id: software
+  title: Open Source Software
+  entries:
+    - when: In development
+      what: RapidDetect
+      details: FPGA engine for 100 Gbps+ system security log processing.
+    - when: In development
+      what: ReLev
+      details: Runtime-reconfigurable FPGA engine for CRISPR binding site discovery.
+    - when: Released
+      what: AutomataZoo
+      details: Automata benchmark suite for architecture research.
+    - when: Released
+      what: RFAutomata
+      details: Decision tree-to-automata conversion tool.
+    - when: Released
+      what: LTLfAutomata
+      details: Converts Linear Temporal Logic over finite traces (LTLf) into finite state automata for system verification.
+
+- id: skills
+  title: Skills & Certifications
+  entries:
+    - when: Languages
+      what: Python, C/C++, Vitis HLS, Verilog, Rust, Java
+    - when: Research tools
+      what: gem5, GNU Radio, VASim, Texada, Hyperscan
+    - when: Hardware tools
+      what: Vitis HLS / Vivado, Quartus, MultiSim
+    - when: Certifications
+      what: FCC General Class Amateur Radio Operator (KM6DHG), since 2016
+      details: "General Electric: low and high voltage certification; Rally Scrum Master training."

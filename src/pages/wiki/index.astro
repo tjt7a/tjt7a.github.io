@@ -1,0 +1,71 @@
+---
+import Base from '../../layouts/Base.astro';
+import NoteList from '../../components/NoteList.astro';
+import { getNotes, allTags } from '../../lib/wiki';
+
+const notes = await getNotes();
+const tags = allTags(notes);
+---
+
+<Base title="Wiki" description="Working notes and ideas">
+  <header class="page-header">
+    <h1>Wiki</h1>
+    <p>
+      Working notes and half-formed ideas. Notes are marked
+      <span class="status status-seedling">seedling</span>,
+      <span class="status status-budding">budding</span>, or
+      <span class="status status-evergreen">evergreen</span>
+      depending on how developed they are.
+    </p>
+  </header>
+
+  <input
+    id="note-filter"
+    class="filter no-print"
+    type="search"
+    placeholder={`Filter ${notes.length} notes…`}
+    aria-label="Filter notes"
+  />
+
+  {tags.length > 0 && (
+    <ul class="pill-row tags">
+      {tags.map(([tag, count]) => <li><a class="pill" href={`/wiki/tags/${tag}/`}>{tag} ({count})</a></li>)}
+    </ul>
+  )}
+
+  <h2 class="section-title">All notes</h2>
+  {notes.length > 0 ? <NoteList notes={notes} /> : <p class="muted">No notes yet. Check back soon.</p>}
+  <p id="no-results" class="muted" hidden>No notes match.</p>
+</Base>
+
+<script>
+  const input = document.getElementById('note-filter') as HTMLInputElement;
+  const items = [...document.querySelectorAll<HTMLLIElement>('.notes > li')];
+  const empty = document.getElementById('no-results')!;
+  input.addEventListener('input', () => {
+    const q = input.value.trim().toLowerCase();
+    let shown = 0;
+    for (const li of items) {
+      const match = !q || li.textContent!.toLowerCase().includes(q);
+      li.hidden = !match;
+      if (match) shown++;
+    }
+    empty.hidden = shown > 0;
+  });
+</script>
+
+<style>
+  .filter {
+    width: 100%;
+    font: inherit;
+    font-family: var(--sans);
+    font-size: 0.95rem;
+    padding: 0.55rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--surface);
+    color: var(--text);
+    margin-bottom: 1rem;
+  }
+  .tags { margin-bottom: 0.5rem; }
+</style>

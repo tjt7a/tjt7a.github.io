@@ -1,0 +1,25 @@
+---
+import Base from '../../../layouts/Base.astro';
+import NoteList from '../../../components/NoteList.astro';
+import { getNotes, allTags } from '../../../lib/wiki';
+
+export async function getStaticPaths() {
+  const notes = await getNotes();
+  return allTags(notes).map(([tag]) => ({
+    params: { tag },
+    props: { notes: notes.filter((n) => n.data.tags.includes(tag)) },
+  }));
+}
+
+const { tag } = Astro.params;
+const { notes } = Astro.props;
+---
+
+<Base title={`Notes tagged “${tag}”`}>
+  <header class="page-header">
+    <p class="sans small"><a href="/wiki/">← Wiki</a></p>
+    <h1>Tagged “{tag}”</h1>
+    <p>{notes.length} {notes.length === 1 ? 'note' : 'notes'}</p>
+  </header>
+  <NoteList notes={notes} />
+</Base>
