@@ -5,4 +5,4 @@ status: active
 order: 5
 ---
 
-<!-- Expand this page: the problem, your approach, key results, collaborators, and code links. -->
+LLMs have become powerful tools for software development, and we are investigating applying LLMs for hardware synthesis - directly synthesizing RTL and HLS for FPGA deployment. This work is under development with initial results expected by the end of 2026.
